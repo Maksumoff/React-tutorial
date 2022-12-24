@@ -5,7 +5,7 @@ import ListOfFruits from "./Components/Fruit/FruitsList";
 function App() {
   return (
     <div className="Container">
-      <h1>Tropic Fruits</h1>
+      <h1>Fruits</h1>
       <div className="Fruits">
         {ListOfFruits.map((fruit, i) => {
           return <Fruits key={i} properties={fruit} />;
