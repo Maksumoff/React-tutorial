@@ -1,0 +1,46 @@
+body {
+  background: #ff93a7;
+  border: 20px dashed #ffc9d2;
+}
+.Container {
+  background: #ffc9d2;
+  margin: 10px;
+  padding: 10px 30px 20px 30px;
+  border-radius: 50px;
+}
+
+.Container h1 {
+  text-align: center;
+  color: #5f0d0dfd;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 100px;
+  border: 3px solid #ffffff88;
+  padding: 10px 80px 10px 80px;
+  border-radius: 10px;
+}
+
+.Fruits {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.Fruits .Name {
+  text-align: center;
+  border-radius: 10px;
+  background: #ffffffd7;
+  padding: 10px 10px 10px 10px;
+  height: 150px;
+  width: 120px;
+}
+.Name h3 {
+  margin: 10px;
+}
