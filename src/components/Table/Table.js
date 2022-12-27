@@ -31,6 +31,8 @@ export default class Table extends Component {
       this.setState({ search: e.target.value });
     };
 
+    const addHandler = (e) => {};
+
     const { name, status, data } = this.state;
     return (
       <div>
@@ -49,7 +51,7 @@ export default class Table extends Component {
             type="text"
             placeholder="status"
           />
-          <button>add</button>
+          <button onClick={addHandler}>add</button>
           <hr />
           <br />
           <br />
