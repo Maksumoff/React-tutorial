@@ -1,3 +1,89 @@
 .App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  height: auto;
+  width: auto;
+  border-radius: 25px;
+  background: #95b8c9;
+  margin-left: 40px;
+  margin-right: 40px;
+  column-gap: 40px;
+}
+
+.Card,
+.AddBtn {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   text-align: center;
+  margin-top: 20px;
+  margin: 20px 0px;
+  border-radius: 20px;
+  height: 300px;
+  width: 300px;
+  color: #6f95a7;
+}
+
+.Card:hover,
+.btn-enter:hover,
+.AddBtn:hover {
+  box-shadow: 0px 0px 15px 0px #6f95a7;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+.Card .btn-enter {
+  color: #6f95a7;
+  background: #fff;
+  padding: 10px 60px 10px 60px;
+  border-radius: 5px;
+  border: 2px solid #6f95a7;
+  font-weight: bolder;
+}
+.btn-add > h1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  color: #6f95a7;
+  background: #fff;
+  border: dashed #95b8c9;
+  border-radius: 20px;
+  font-size: 80px;
+  font-weight: 100;
+  height: 80px;
+  width: 80px;
+  margin: auto;
+}
+.AddBtn .btn-add {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.AddBtn > h3 {
+  color: #6f95a7;
+}
+
+.Card > h1 {
+  color: #6f95a7;
+}
+.Container > h1 {
+  margin-left: 40px;
+  color: #fff;
+}
+img {
+  width: 80px;
+  border: 2px solid #6f95a7;
+  border-radius: 50px;
 }
