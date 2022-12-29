@@ -1,6 +1,7 @@
 import "./App.css";
 import AddCard from "./Components/Add/AddCard";
 import Card from "./Components/Card/Card";
+import Form from "./Components/Form/Form";
 
 function App() {
   return (
@@ -9,11 +10,8 @@ function App() {
       <div className="App">
         <Card />
         <Card />
-        <Card />
-        <Card />
-        <Card />
         <AddCard />
-        <AddCard />
+        <Form />
       </div>
     </div>
   );

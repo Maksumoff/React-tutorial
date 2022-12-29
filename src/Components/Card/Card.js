@@ -1,17 +1,27 @@
 import React, { Component } from "react";
+import { AddCardData } from "../Add/AddCardData";
 
 export default class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: AddCardData,
+    };
+  }
   render() {
     return (
-      <div className="Card">
-        <img
-          src="https://thumb.tildacdn.com/tild3239-3563-4233-b963-636265616566/-/resize/800x/-/format/webp/noroot.png"
-          alt="iman.uz"
-        />
-        <h1>Iman</h1>
-        <p>owner</p>
-        <button className="btn-enter">Kirish</button>
-      </div>
+      <>
+        {this.state.data.map(({ id, img, name, industry, enter }) => {
+          return (
+            <div className="Card">
+              <img src={img} alt="" />
+              <h1>{name}</h1>
+              <p>{industry} </p>
+              <button className="btn-enter">{enter} </button>
+            </div>
+          );
+        })}
+      </>
     );
   }
 }

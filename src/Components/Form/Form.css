@@ -1,0 +1,75 @@
+.Formhandle {
+  gap: 3rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  justify-content: center;
+  height: 70vh;
+  width: 80vw;
+  background: #fff;
+  border-radius: 20px;
+}
+.form > label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #6f95a7;
+}
+.form > input,
+select {
+  margin: 10px;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #6f95a7;
+  background: #fff;
+  color: #6f95a7;
+}
+::placeholder {
+  color: #6f95a7;
+}
+.form > select:hover,
+.form > input:hover,
+.btn > button:hover {
+  box-shadow: 0px 0px 10px 0px #6f95a7;
+}
+
+.exclamation {
+  text-align: center;
+  color: #6f95a7;
+}
+
+.exclamation:hover {
+  cursor: pointer;
+}
+
+.descr {
+  border: 3px solid #fff;
+  border-radius: 10px;
+  background: #fff;
+  padding: 5px;
+  width: 300px;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 10px;
+}
+.btn > button {
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 2px solid #6f95a7;
+  margin-top: 10px;
+  background: #fff;
+  color: #6f95a7;
+  font-size: 1rem;
+  font-weight: 600;
+}

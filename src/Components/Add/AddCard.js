@@ -1,19 +1,12 @@
 import React, { Component } from "react";
+import { AddCardData } from "./AddCardData";
 
 export default class AddCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       addBtn: { add: "+", addStore: "Do'kon qo'shish" },
-      data: (
-        <form>
-          <input type="text" />
-          <input type="text" />
-          <input type="radio" name="" id="" />
-          <input type="tel" name="" id="" />
-          <input type="email" name="" id="" />
-        </form>
-      ),
+      data: AddCardData,
       // form: {
       //   name: "Kompaniya nomi",
       //   address: "Kompaniya manzili",
@@ -49,11 +42,13 @@ export default class AddCard extends Component {
     const { addBtn } = this.state;
 
     return (
-      <div className="AddBtn">
-        <button onClick={addHandler} className="btn-add">
-          <h1>{addBtn.add}</h1>
-        </button>
-        <h3>{addBtn.addStore}</h3>
+      <div>
+        <div className="AddBtn">
+          <button onClick={addHandler} className="btn-add">
+            <h1>{addBtn.add}</h1>
+          </button>
+          <h3>{addBtn.addStore}</h3>
+        </div>
       </div>
     );
   }
