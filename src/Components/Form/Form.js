@@ -6,29 +6,33 @@ export default class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      btnStatus: true,
       isHover: false,
     };
   }
   render() {
-    const mouseOverHandler = () => {
-      this.setState({ isHover: true });
+    const btnStatusHandler = (e) => {
+      console.log(e.target.name);
     };
-    const mouseOutHandler = () => {
-      this.setState({ isHover: false });
-    };
+    // const mouseOverHandler = () => {
+    //   this.setState({ isHover: true });
+    // };
+    // const mouseOutHandler = () => {
+    //   this.setState({ isHover: false });
+    // };
     return (
       <div className="Formhandle">
         <form className="form">
           <label htmlFor="name">
             Kompaniya nomi{" "}
             <FaExclamationCircle
-              onMouseOver={mouseOverHandler}
-              onMouseOut={mouseOutHandler}
+              // onMouseOver={mouseOverHandler}
+              // onMouseOut={mouseOutHandler}
               className="exclamation"
             />{" "}
-            {this.state.isHover && (
+            {/* {this.state.isHover && (
               <span className="descr">Kompaniyangizni kiriting</span>
-            )}
+            )} */}
           </label>
           <input
             name="name"
@@ -66,8 +70,12 @@ export default class Form extends Component {
           />{" "}
         </form>
         <div className="btn">
-          <button>Tasdiqlash</button>
-          <button>Bekor qilish</button>
+          <button name="confirm" onClick={btnStatusHandler}>
+            Tasdiqlash
+          </button>
+          <button name="cancel" onClick={btnStatusHandler}>
+            Bekor qilish
+          </button>
         </div>
       </div>
     );

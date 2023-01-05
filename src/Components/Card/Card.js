@@ -13,7 +13,7 @@ export default class Card extends Component {
       <>
         {this.state.data.map(({ id, img, name, industry, enter }) => {
           return (
-            <div className="Card">
+            <div key={id} className="Card">
               <img src={img} alt="" />
               <h1>{name}</h1>
               <p>{industry} </p>
