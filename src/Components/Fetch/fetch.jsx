@@ -21,6 +21,7 @@ const Fetch = () => {
     getUsers(id).then((res) => setSelected(res));
     // console.log(id);
   };
+  console.log(selected);
   return (
     <div style={{ display: "flex" }}>
       <div style={{ flex: "1" }}>
@@ -32,6 +33,7 @@ const Fetch = () => {
         ))}
       </div>
       <div style={{ flex: "1" }}>
+        <h1>Info:</h1>
         <h3>Name: {selected?.name}</h3>
         <h3>Email: {selected?.email}</h3>
         <h3>Phone: {selected?.phone}</h3>
