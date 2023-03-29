@@ -21,7 +21,7 @@ const Fetch = () => {
     getUsers(id).then((res) => setSelected(res));
     // console.log(id);
   };
-  console.log(selected);
+  // const { id, name, email, phone } = selected;
   return (
     <div style={{ display: "flex" }}>
       <div style={{ flex: "1" }}>
@@ -34,7 +34,10 @@ const Fetch = () => {
       </div>
       <div style={{ flex: "1" }}>
         <h1>Info:</h1>
-        <h3>Name: {selected?.name}</h3>
+        <h3>
+          Name: {selected?.id}
+          {"."} {selected?.name}
+        </h3>
         <h3>Email: {selected?.email}</h3>
         <h3>Phone: {selected?.phone}</h3>
       </div>
@@ -43,6 +46,7 @@ const Fetch = () => {
 };
 
 export default Fetch;
+
 // const Fetch = () => {
 //   const [user, setUser] = useState([]);
 //   const [selected, setSelected] = useState([]);
