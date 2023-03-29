@@ -21,7 +21,7 @@ const Fetch = () => {
     getUsers(id).then((res) => setSelected(res));
     // console.log(id);
   };
-  // console.log(selected);
+  console.log(selected);
   return (
     <div style={{ display: "flex" }}>
       <div style={{ flex: "1" }}>
