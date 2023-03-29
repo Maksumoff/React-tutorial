@@ -9,5 +9,6 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     <Fetch />
+    <h3>Hey</h3>
   </React.StrictMode>
 );
