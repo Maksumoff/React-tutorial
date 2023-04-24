@@ -5,19 +5,23 @@ const Login = () => {
   const passwordRef = useRef("");
 
   const login = () => {
-    return fetch("http://158.51.99.245:8081/api/public/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
-      }),
-    })
+    return fetch(
+      "http://ec2-3-140-188-131.us-east-2.compute.amazonaws.com:8081/api/public/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          password: passwordRef.current.value,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
-        localStorage.setItem("token", res?.data);
+        console.log(res);
+        localStorage.setItem("token", res?.authenticationToken);
       });
   };
 

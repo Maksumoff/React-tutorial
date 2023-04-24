@@ -2,16 +2,20 @@ import { useState } from "react";
 const GetData = () => {
   const [houseList, setHouseList] = useState([]);
 
-  const getInfo = () => {
-    return fetch("http://158.51.99.245:8081/api/v1/houses/list", {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
+  const getInfo = (id) => {
+    return fetch(
+      `http://ec2-3-140-188-131.us-east-2.compute.amazonaws.com:8081/api/v1/houses/list?page=${id}`,
+      // "http://ec2-3-140-188-131.us-east-2.compute.amazonaws.com:8081/api/v1/houses/list ",
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
         setHouseList(res?.data);
-        // console.log(res);
+        console.log(res);
       });
   };
 
@@ -19,17 +23,24 @@ const GetData = () => {
   const sortId = houseList.sort((a, b) => a.id - b.id);
 
   const onDelete = (id) => {
-    return fetch(`http://158.51.99.245:8081/api/v1/houses/${id}`, {
-      method: "Delete",
-      headers: {
-        Auhorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
+    return fetch(
+      `http://ec2-3-140-188-131.us-east-2.compute.amazonaws.com:8081/api/v1/houses/${id}`,
+      {
+        method: "Delete",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
         if (res?.success) {
           getInfo();
         }
+
+        // if (res?.success) {
+        //   getInfo();
+        // }
         // res?.success && getInfo()
       });
   };
@@ -42,7 +53,8 @@ const GetData = () => {
         gap: "5px",
       }}
     >
-      <button onClick={getInfo}>Get Data</button>
+      <button onClick={() => getInfo(0)}>Get Data - First Page</button>
+      <button onClick={() => getInfo(1)}>Get Data - Second Page</button>
       {sortId.map(({ id, name, description }) => (
         <div key={id} style={{ display: "flex" }}>
           <h3 style={{ marginRight: "5px" }}>
@@ -53,6 +65,9 @@ const GetData = () => {
 
           <h3 style={{ marginRight: "5px" }}>Description: {description}</h3>
           <button onClick={() => onDelete(id)}>delete</button>
+          <button onClick={() => localStorage.setItem("id", id)}>
+            change/update
+          </button>
         </div>
       ))}
     </div>
